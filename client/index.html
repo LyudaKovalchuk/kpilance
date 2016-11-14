@@ -5,9 +5,27 @@
 	<script src="node_modules/angular/angular.js"></script>
 </head>
 <body ng-app="kpilance">
-	<account></account>
-	<sign-up></sign-up>
-	<sign-in></sign-in>
+	<tabs>
+		<tab title="signup-tab">
+			<sign-up></sign-up>
+		</tab>
+		
+		<tab  title="account">
+			<account></account>
+		</tab>
+		
+		<tab title="signin-tab">
+			<sign-in></sign-in>
+		</tab>
+		<tab title="account-too">
+			<account></account>
+		</tab>
+	</tabs>
 	<script src="app/app.js"></script>
+	<script src="app/components/signup/signup.js"></script>
+	<script src="app/components/account/account.js"></script>
+	<script src="app/components/signin/signin.js"></script>
+	<script src="app/components/tabs/tabs.js"></script>
+	<script src="app/components/tabs/tab.js"></script>
 </body>
 </html>
