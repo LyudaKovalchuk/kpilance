@@ -9,5 +9,9 @@ angular.module('kpilance')
 
 function signInCtrl() {
 	let ctrl = this;
+
+	ctrl.login = function(){
+		console.log("login");
+	}
 	
 }
