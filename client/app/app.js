@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('kpilance', []);
+angular.module('kpilance', ['ui.router']);
