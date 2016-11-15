@@ -4,21 +4,45 @@ angular.module('kpilance')
 	.component('tabs', {
 		templateUrl: 'app/components/tabs/tabs.html',
 		transclude: true,
-		controller: TabsController,
+		controller: TabsCtrl,
 		controllerAs: 'ctrl'
+	})
+	.component('tab', {
+		templateUrl: 'app/components/tabs/tab.html',
+		transclude: true,
+		require: {
+			tabsCtrl: '^tabs'
+		},
+		controller: TabCtrl,
+		controllerAs: 'ctrl',
+		bindings: {
+			title: '@'
+		}
 	});
 
-function TabsController(){
+function TabsCtrl() {
 	let ctrl = this;
 
 	ctrl.tabs = [];
 
-	ctrl.select = function(tab) {
+	ctrl.select = (tab) => {
 		angular.forEach(ctrl.tabs, (elem) => elem.selected = false);
 		tab.selected = true;
 	}
 
-	ctrl.addTab = function(tab) {
+	ctrl.addTab = (tab) => {
 		ctrl.tabs.push(tab);
 	}
+}
+
+function TabCtrl() {
+	let ctrl = this;
+
+	let init = () => {
+		ctrl.$onInit = () => {
+			ctrl.tabsCtrl.addTab(this);
+		};
+	}
+
+	init();
 }
