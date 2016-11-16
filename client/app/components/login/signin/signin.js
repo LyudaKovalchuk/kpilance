@@ -7,7 +7,7 @@ angular.module('kpilance')
 		controllerAs: 'ctrl'
 	});
 
-function signInCtrl(AuthService) {
+function signInCtrl(AuthService, $state) {
 	let ctrl = this;
 	
 	ctrl.user = {};
@@ -18,11 +18,11 @@ function signInCtrl(AuthService) {
 		AuthService.login(ctrl.user)
 			.then((res) => {
 				ctrl.submitted = false;
-				console.log("OK");
+				$state.go('dashboard');
 			})
 			.catch((res) => {
 				ctrl.submitted = false;
-				console.log("NO");
+				ctrl.message = 'Error';
 			});
 	}
 	
