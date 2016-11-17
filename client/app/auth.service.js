@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('kpilance.auth')
-	.service('AuthService', function($http, $localStorage, $q, JWTService, API) {
+	.service('AuthService', function($http, $localStorage, JWTService, API) {
 
 		this.login = (user) => {
 			// return $http({
@@ -58,12 +58,17 @@ angular.module('kpilance.auth')
 		this.save = (token) => {
 			$localStorage.token = token;
 		};
+		
+		this.logout = () => {
+			$localStorage.currentUser = null;
 
-		this.destroy = () => {
-			$localStorage.token = null;
+			// JWTService.destroy();
+			// $http.defaults.headers.common.Authorization = '';
+
 		};
 
-		this.getToken = () => {
-			return $localStorage.token;
+		this.authAtemp = () => {
+			return $localStorage.currentUser;
 		}
+
 	});

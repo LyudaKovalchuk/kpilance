@@ -15,7 +15,7 @@ angular.module('kpilance.auth', ['ui.router', 'ngStorage'])
 			component: 'dashboard',
 			resolve: {
 				currentUser: (AuthService) => {
-					return AuthService.authUser()
+					return AuthService.authUser();
 				}
 			}
 		};
