@@ -5,5 +5,5 @@
 		<input type="password" name="password" placeholder="Password" ng-model="ctrl.user.password"/>
 		<button type="submit">Log In</button>
 	</form>
-	<notification message="ctrl.message" ng-show="ctrl.message"></notification>
+	<notification message="{{ctrl.message}}" ng-if="ctrl.message"></notification>
 </div>

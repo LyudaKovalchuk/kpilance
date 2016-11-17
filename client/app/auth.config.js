@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('kpilance.auth', ['ui.router'])
+angular.module('kpilance.auth', ['ui.router', 'ngStorage'])
 	.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
 		let loginState = {
@@ -12,7 +12,12 @@ angular.module('kpilance.auth', ['ui.router'])
 		let homeState = {
 			name: 'dashboard',
 			url: '/',
-			component: 'dashboard'
+			component: 'dashboard',
+			resolve: {
+				currentUser: (AuthService) => {
+					return AuthService.authUser()
+				}
+			}
 		};
 
 		$stateProvider.state(loginState);

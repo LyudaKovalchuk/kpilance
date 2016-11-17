@@ -7,13 +7,23 @@ angular.module('kpilance')
 		controllerAs: 'ctrl'
 	});
 
-function signUpCtrl() {
+function signUpCtrl(UserService, $state) {
 	let ctrl = this;
 	
-	ctrl.user = {}
+	ctrl.user = {};
 
 	ctrl.signup = function() {
-		console.log(ctrl.user.username, ctrl.user.email, ctrl.user.passwordConfirm, ctrl.user.passwordConfirm)
-		console.log("Registr succesful")
+		ctrl.submitted = true;
+
+		UserService.registr(ctrl.user)
+			.then((res) => {
+				ctrl.submitted = false;
+				$state.go('dashboard');
+			})
+			.catch((res) => {
+				ctrl.submitted = false;
+				ctrl.message = 'Error';
+			});
 	}
+
 }
