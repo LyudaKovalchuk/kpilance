@@ -6,7 +6,7 @@ angular.module('kpilance')
 		controller: NotifCtrl,
 		controllerAs: 'ctrl',
 		bindings: {
-			message: '<'
+			message: '@'
 		}
 	});
 
