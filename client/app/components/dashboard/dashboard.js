@@ -10,7 +10,10 @@ angular.module('kpilance.dashboard', [])
 		}
 	});
 
-function dashboardCtrl() {
+function dashboardCtrl($http) {
 	let ctrl = this;
 
+	ctrl.search = () => {
+		//TODO
+	}
 }
