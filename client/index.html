@@ -7,6 +7,7 @@
 
 		<script src="node_modules/angular/angular.js"></script>
 		<script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+		<script src="node_modules/angular-mocks/angular-mocks.js"></script>
 		<script src="node_modules/ngstorage/ngStorage.js"></script>
 
 		<script src="node_modules/less/dist/less.js"></script>
@@ -16,15 +17,17 @@
 		<ui-view></ui-view>
 		
 		<script src="app/app.js"></script>
+		<script src="serverMock.js"></script>
 		<script src="app/app.const.js"></script>
-		<script src="app/auth.config.js"></script>
-		<script src="app/auth.service.js"></script>
-		<script src="app/user.service.js"></script>
+		<script src="app/auth/auth.config.js"></script>
+		<script src="app/services/auth.service.js"></script>
+		<script src="app/services/user.service.js"></script>
 		<script src="app/components/tabs/tabs.js"></script>
 		<script src="app/components/login/signin/signin.js"></script>
 		<script src="app/components/login/signup/signup.js"></script>
 		<script src="app/components/dashboard/dashboard.js"></script>
 		<script src="app/components/notification/notification.js"></script>
+
 
 	</body>
 </html>

@@ -23,6 +23,6 @@ angular.module('kpilance.auth', ['ui.router', 'ngStorage'])
 		$stateProvider.state(loginState);
 		$stateProvider.state(homeState);
 		
-		$urlRouterProvider.otherwise('/');
+		$urlRouterProvider.otherwise('/login');
 
 	});
