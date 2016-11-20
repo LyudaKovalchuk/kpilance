@@ -20,8 +20,20 @@ angular.module('kpilance.auth', ['ui.router', 'ngStorage'])
 			}
 		};
 
+		let accountState = {
+			name: 'account',
+			url: '/account',
+			component: 'account',
+			resolve: {
+				currentUser: (AuthService) => {
+					return AuthService.authUser();
+				}
+			}
+		};
+
 		$stateProvider.state(loginState);
 		$stateProvider.state(homeState);
+		$stateProvider.state(accountState);
 		
 		$urlRouterProvider.otherwise('/login');
 

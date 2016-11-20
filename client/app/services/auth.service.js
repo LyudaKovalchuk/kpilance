@@ -10,7 +10,7 @@ angular.module('kpilance.auth')
 				data: user
 
 			}).then((response) => {
-				$localStorage.currentUser = response.data.username;
+				$localStorage.currentUser = response.data.user;
 				// JWTService.save(response.token);
 
 				return response;

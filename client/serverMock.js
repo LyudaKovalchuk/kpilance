@@ -9,11 +9,13 @@ angular.module('kpilance.backend', ['ngMockE2E'])
 		};
 
 		let qwerty = {
-			username: 'qwerty'
+			user: {
+				username: 'qwerty'
+			}
 		};
 
-		$httpBackend.whenPOST('/auth', qwertyCredentials).respond({username: 'qwerty'});
-		$httpBackend.whenDELETE('/logout', 'qwerty').respond({username: 'qwerty'});
+		$httpBackend.whenPOST('/auth', qwertyCredentials).respond(qwerty);
+		$httpBackend.whenDELETE('/logout', 'qwerty').respond(qwerty);
 
 		$httpBackend.whenGET(/.html/).passThrough();
 	});
