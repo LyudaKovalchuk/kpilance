@@ -14,7 +14,7 @@ function userbarCtrl($state) {
 	let ctrl = this;
 
 	ctrl.goDashboard = () => {
-		$state.go('dashboard');
+		$state.go('account');
 	};
 
 	ctrl.goLogin = () => {

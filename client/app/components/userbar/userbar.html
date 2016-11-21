@@ -1,8 +1,8 @@
-<div ng-if="!!ctrl.user">
+<div ng-if="!ctrl.user">
 	<button ng-click="ctrl.goDashboard()">Dashboard</button>
 	<button ng-click="ctrl.goLogin()">Login</button>
 </div>
-<div ng-if="!ctrl.user">
+<div ng-if="!!ctrl.user">
 	Hello {{ctrl.user.username}}
 	<button ng-click="ctrl.goAccount()">Account</button>
 </div>

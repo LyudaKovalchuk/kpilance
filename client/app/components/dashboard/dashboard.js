@@ -15,5 +15,6 @@ function dashboardCtrl($http) {
 
 	ctrl.search = () => {
 		//TODO
-	}
+	};
+
 }

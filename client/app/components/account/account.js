@@ -7,7 +7,20 @@ angular.module('kpilance')
 		controllerAs: 'ctrl'
 	});
 	
-function accountCtrl() {
+function accountCtrl(UserService) {
 	let ctrl = this;
+
+	ctrl.$onInit = () => {
+		UserService
+			.getUserContext()
+				.then((response) => {
+					ctrl.userDetails = response.data.user;
+					console.log(ctrl.userDetails);
+				});
+	};
+
+	ctrl.createPaymentAccount = () => {
+		//TODO
+	}
 	
 }

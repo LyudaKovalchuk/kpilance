@@ -29,4 +29,17 @@ angular.module('kpilance')
 			});
 		};
 
+		this.getUserContext = () => {
+			return $http({
+				url: API + '/user/' + $localStorage.currentUser.username,
+				method: 'GET'
+			});
+		};
+
+		this.getUserDetails = (username) => {
+			return $http({
+				url: API + '/user/' + username,
+				method: 'GET'
+			});
+		};
 	});

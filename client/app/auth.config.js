@@ -11,7 +11,7 @@ angular.module('kpilance.auth', ['ui.router', 'ngStorage'])
 
 		let homeState = {
 			name: 'dashboard',
-			url: '/',
+			url: '/dashboard',
 			component: 'dashboard',
 			resolve: {
 				currentUser: (AuthService) => {
@@ -21,6 +21,7 @@ angular.module('kpilance.auth', ['ui.router', 'ngStorage'])
 		};
 
 		let accountState = {
+			parent: homeState,
 			name: 'account',
 			url: '/account',
 			component: 'account',
