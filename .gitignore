@@ -1,2 +1,5 @@
-#
+#npm dep
 node_modules/
+
+#build folder
+build/
