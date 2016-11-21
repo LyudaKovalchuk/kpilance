@@ -10,18 +10,26 @@ angular.module('kpilance.dashboard')
 		}
 	});
 
-function userbarCtrl($state) {
+function userbarCtrl($state, AuthService) {
 	let ctrl = this;
 
 	ctrl.goDashboard = () => {
-		$state.go('account');
-	};
-
-	ctrl.goLogin = () => {
-		$state.go('login');
+		$state.go('dashboard');
 	};
 
 	ctrl.goAccount = () => {
 		$state.go('account');
 	};
+
+	ctrl.login = () => {
+		$state.go('login');
+	};
+
+	ctrl.logout = () => {
+		AuthService.logout()
+			.then((response) => {
+				$state.go('dashboard', {}, { reload: true });
+			});
+	};	
+
 }

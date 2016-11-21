@@ -21,9 +21,19 @@ angular.module('kpilance.backend', ['ngMockE2E'])
 			}
 		};
 
-		$httpBackend.whenPOST('/auth', qwertyCredentials).respond(qwerty);
-		$httpBackend.whenDELETE('/logout', qwerty.user.username).respond(qwerty);
+		let qwertyNew = {
+			username: 'qwerty',
+			password: 'qwerty',
+			posswordConfirm: 'qwerty',
+			email: 'qwerty@gmail.com'
+		};
+
 		$httpBackend.whenGET('/user/' + qwerty.user.username).respond(qwerty);
+		$httpBackend.whenGET('/userContext' + qwerty.user.username).respond(qwerty);
+		$httpBackend.whenPOST('/auth', qwertyCredentials).respond(qwerty);
+		$httpBackend.whenDELETE('/logout').respond(200);
+
+		$httpBackend.whenPOST('/registr', qwertyNew).respond(qwerty);
 
 		$httpBackend.whenGET(/.html/).passThrough();
 	});

@@ -15,7 +15,6 @@ function accountCtrl(UserService) {
 			.getUserContext()
 				.then((response) => {
 					ctrl.userDetails = response.data.user;
-					console.log(ctrl.userDetails);
 				});
 	};
 

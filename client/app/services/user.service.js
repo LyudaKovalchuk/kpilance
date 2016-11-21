@@ -2,30 +2,15 @@
 
 angular.module('kpilance')
 	.service('UserService', function($http, $localStorage, API) {
-
 		this.registr = (user) => {
-			// return $http({
-			// 	url: API + '/auth',
-			// 	method: 'POST',
-			// 	data: user
+			return $http({
+				url: API + '/registr',
+				method: 'POST',
+				data: user
 
-			// }).then((response) => {
-			// 	$localStorage.currentUser = response.user;
-			// 	JWTService.save(response.token);
-
-			// 	$http.defaults.headers.common.Authorization = JWTService.getToken();
-			// 	return response;
-			// });
-
-
-			return new Promise((resolve, reject) => {
-				if(user.username == user.password) {
-					$localStorage.currentUser = user;
-					resolve();
-				}
-				else {
-					reject();
-				}
+			}).then((response) => {
+				$localStorage.currentUser = response.data.user;
+				return response;
 			});
 		};
 

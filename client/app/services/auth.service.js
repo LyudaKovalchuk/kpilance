@@ -29,30 +29,20 @@ angular.module('kpilance.auth')
 
 		this.logout = () => {
 
-			let responsePromise = $http({
+			$localStorage.currentUser = null;
+			
+			return $http({
 				url: API + '/logout',
 				method: 'DELETE',
-				data: {
-					username: $localStorage.currentUser
-				}
 			});
 
-			$localStorage.currentUser = null;
 			// JWTService.destroy();
-
-			return responsePromise;
-
-
-			$localStorage.currentUser = null;
-			return new Promise((resolve, reject) => {
-				resolve();
-			});
 
 		};
 
 		this.authUser = () => {
 			return $localStorage.currentUser;
-		}
+		};
 
 	});
 	// .service('JWTService', function($localStorage) {
