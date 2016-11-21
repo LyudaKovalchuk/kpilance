@@ -5,7 +5,7 @@ var gulp 	= require('gulp'),
 gulp.task('less', function() {
 	gulp.src('app/**/*.less')
 		.pipe(less())
-		.pipe(concat('styles.css'))
+		.pipe(concat('build/styles.css'))
 		.pipe(gulp.dest('./'));
 });
 
