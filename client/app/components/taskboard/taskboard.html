@@ -1,0 +1,30 @@
+<div>
+	<div>
+		<select ng-model="ctrl.subject" ng-change="ctrl.update()">
+			<option value="all">All</option>
+			<option value="math">Mathematics</option>
+			<option value="physics">Physics</option>
+			<option value="languages">Languages</option>
+			<option value="programming">Programming</option>
+		</select>
+		<select ng-model="ctrl.orderBy" ng-change="ctrl.update()">
+			<option value="price">Price</option>
+			<option value="estimate">Estimate</option>
+			<option value="review">Review</option>
+		</select>
+	</div>
+
+	<div infinite-scroll="ctrl.loadMore()"
+		 infinite-scroll-distance="1"
+		 infinite-scroll-disabled="ctrl.allContent">
+		<task-item ng-repeat="task in ctrl.tasks">
+			<div>
+				<p><b>Task</b></p>
+				<p>Title: {{task.title}}</p>
+				<p>Description: {{task.description}}</p>
+				<p>Subject: {{task.subject}}</p>
+				<p>Price: {{task.price}}</p>
+			</div>
+		</task-item>
+	</div>
+</div>

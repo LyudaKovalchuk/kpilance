@@ -31,6 +31,9 @@ function TabsCtrl() {
 	}
 
 	ctrl.addTab = (tab) => {
+		if(ctrl.tabs.length === 0){
+			ctrl.select(tab);
+		}
 		ctrl.tabs.push(tab);
 	}
 }

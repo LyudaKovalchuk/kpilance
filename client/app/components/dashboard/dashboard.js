@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('kpilance.dashboard', [])
+angular.module('kpilance.dashboard', ['kpilance.taskboard'])
 	.component('dashboard', {
 		templateUrl: 'app/components/dashboard/dashboard.html',
 		controller: dashboardCtrl,

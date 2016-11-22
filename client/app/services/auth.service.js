@@ -2,7 +2,6 @@
 
 angular.module('kpilance.auth')
 	.service('AuthService', function($http, $localStorage, API) {
-
 		this.login = (user) => {
 			return $http({
 				url: API + '/auth',
@@ -15,16 +14,6 @@ angular.module('kpilance.auth')
 
 				return response;
 			});
-
-			// return new Promise((resolve, reject) => {
-			// 	if(user.username == user.password) {
-			// 		$localStorage.currentUser = user;
-			// 		resolve();
-			// 	}
-			// 	else {
-			// 		reject();
-			// 	}
-			// });
 		};
 
 		this.logout = () => {
