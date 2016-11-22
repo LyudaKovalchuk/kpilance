@@ -17,14 +17,6 @@
 	<div infinite-scroll="ctrl.loadMore()"
 		 infinite-scroll-distance="1"
 		 infinite-scroll-disabled="ctrl.allContent">
-		<task-item ng-repeat="task in ctrl.tasks">
-			<div>
-				<p><b>Task</b></p>
-				<p>Title: {{task.title}}</p>
-				<p>Description: {{task.description}}</p>
-				<p>Subject: {{task.subject}}</p>
-				<p>Price: {{task.price}}</p>
-			</div>
-		</task-item>
+		<task-item ng-repeat="task in ctrl.tasks" details="task"></task-item>
 	</div>
 </div>
