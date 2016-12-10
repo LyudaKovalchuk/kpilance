@@ -1,10 +1,14 @@
 <div ng-if="!ctrl.user">
-	<button ng-click="ctrl.goDashboard()">Dashboard</button>
-	<button ng-click="ctrl.login()">Login</button>
+	<ul class="nav navbar">
+		<a ng-click="ctrl.goDashboard()" class="navbar-brand">Dashboard</a>
+		<li><a ng-click="ctrl.login()"><span class="glyphicon glyphicon-user"></span></a></li>
+	</ul>
 </div>
 <div ng-if="!!ctrl.user">
-	<button ng-click="ctrl.goDashboard()">Dashboard</button>
-	Hello {{ctrl.user.username}}
-	<button ng-click="ctrl.goAccount()">Account</button>
-	<button ng-click="ctrl.logout()">Log Out</button>
+	<ul class="nav navbar navbar-logged">
+		<a ng-click="ctrl.goDashboard()" class="navbar-brand">Dashboard</a>
+			<p class="hello-user">Hello {{ctrl.user.username}}</p>
+		<li class="logged"><a ng-click="ctrl.goAccount()">Account</a></li>
+		<li class="logged"><a ng-click="ctrl.logout()">Log Out</a></li>
+	</ul>
 </div>

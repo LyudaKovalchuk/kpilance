@@ -1,9 +1,11 @@
 <div>
 	<userbar user="ctrl.currentUser"></userbar>
-	<div>
-		<form name="search-form" ng-submit="ctrl.search()">
-			<input type="text" ng-model="searchValue"></input>
-			<button type="submit">Search</button>
+	<div class="form">
+		<form name="search-form" ng-submit="ctrl.search()" class="text-center">
+			<img src="resources/logos/kpilogo.gif">
+			<h1>KPIlance</h1>
+			<input type="text" ng-model="searchValue"/>
+			<button type="submit" class="btn btn-info">Search</button>
 		</form>
 	</div>
 

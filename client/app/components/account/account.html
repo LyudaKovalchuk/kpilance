@@ -1,23 +1,10 @@
 <div>
-	<tabs>
-		<tab title="userifno">
-			<img ng-src="{{ctrl.userDetails.photoUrl}}">
-			<p>User: {{ctrl.userDetails.username}}</p>
-			<p>email: {{ctrl.userDetails.email}}</p>
-			<p>rating: {{ctrl.userDetails.rating}}</p>
-		</tab>
-		<tab title="payment">
-			<div ng-if="!ctrl.userDetails.account" ng-click="ctrl.createPaymentAccount()">
-				Create payment account!
-			</div>
-			<div ng-if="!!ctrl.userDetails.account">
-				<p>Amount: {{ctrl.userDetails.account.amount}}</p>
-				<p>Bank-card: {{ctrl.userDetails.account.bankCard}}</p>				
-			</div>
-		</tab>
-		<tab title="history">
-
-		</tab>
-	</tabs>
-	
+    <tabs>
+        <tab title="User settings">
+            <user></user>
+        </tab>
+        <tab title="Payment account">
+            <payment></payment>
+        </tab>
+    </tabs>
 </div>

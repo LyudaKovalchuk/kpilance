@@ -14,9 +14,9 @@
 		</select>
 	</div>
 
-	<div infinite-scroll="ctrl.loadMore()"
+	<div  infinite-scroll="ctrl.loadMore()"
 		 infinite-scroll-distance="1"
-		 infinite-scroll-disabled="ctrl.allContent">
-		<task-item ng-repeat="task in ctrl.tasks" details="task"></task-item>
+		 infinite-scroll-disabled="ctrl.allContent" class="center">
+		<task-item ng-repeat="task in ctrl.tasks" details="task" class="task"></task-item>
 	</div>
 </div>

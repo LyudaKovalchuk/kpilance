@@ -24,18 +24,22 @@ angular.module('kpilance.auth', ['ui.router', 'ngStorage'])
 			parent: homeState,
 			name: 'account',
 			url: '/account',
-			component: 'account',
-			resolve: {
-				currentUser: (AuthService) => {
-					return AuthService.authUser();
-				}
-			}
+			templateUrl: 'app/components/account/account.html'
 		};
+
+		let taskState = {
+			parent: homeState,
+			name: 'task',
+			url: '/task',
+			templateUrl: 'app/components/task/task.html'
+		};
+
 
 		$stateProvider.state(loginState);
 		$stateProvider.state(homeState);
 		$stateProvider.state(accountState);
+		$stateProvider.state(taskState);
 		
-		$urlRouterProvider.otherwise('/login');
+		$urlRouterProvider.otherwise('/dashboard');
 
 	});

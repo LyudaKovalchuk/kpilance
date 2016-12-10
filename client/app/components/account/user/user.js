@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('kpilance')
-	.component('account', {
-		templateUrl: 'app/components/account/account.html',
-		controller: accountCtrl,
+	.component('user', {
+		templateUrl: 'app/components/account/user/user.html',
+		controller: userCtrl,
 		controllerAs: 'ctrl'
 	});
 	
-function accountCtrl(UserService) {
+function userCtrl(UserService) {
 	let ctrl = this;
 
 	ctrl.$onInit = () => {
@@ -18,8 +18,4 @@ function accountCtrl(UserService) {
 				});
 	};
 
-	ctrl.createPaymentAccount = () => {
-		//TODO
-	}
-	
 }
