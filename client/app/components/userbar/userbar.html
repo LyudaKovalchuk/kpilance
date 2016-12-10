@@ -1,11 +1,11 @@
 <div ng-if="!ctrl.user">
-	<ul class="nav navbar">
+	<ul class="nav navbar navbar-fixed-top">
 		<a ng-click="ctrl.goDashboard()" class="navbar-brand">Dashboard</a>
 		<li><a ng-click="ctrl.login()"><span class="glyphicon glyphicon-user"></span></a></li>
 	</ul>
 </div>
 <div ng-if="!!ctrl.user">
-	<ul class="nav navbar navbar-logged">
+	<ul class="nav navbar navbar-logged navbar-fixed-top">
 		<a ng-click="ctrl.goDashboard()" class="navbar-brand">Dashboard</a>
 			<p class="hello-user">Hello {{ctrl.user.username}}</p>
 		<li class="logged"><a ng-click="ctrl.goAccount()">Account</a></li>

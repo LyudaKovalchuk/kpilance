@@ -1,9 +1,9 @@
-<div>
+<div class="cont">
 	<ul class="nav nav-tabs">
 		<li ng-repeat="tab in ctrl.tabs"
 			ng-click=ctrl.select(tab)
-			ng-class="{active: tab.selected}">
-			<a>{{tab.title}}</a>
+			ng-class="{active: tab.selected}" class="listitem">
+			<a class="tabka">{{tab.title}}</a>
 		</li>
 	</ul>
 	<ng-transclude></ng-transclude>
